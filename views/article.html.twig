@@ -10,7 +10,7 @@
     </header>
     <p>{{ article.content }}</p>
     <footer>
-        <time datetime="">{{ article.date|date('d-m-Y') }}</time>
+        <time datetime="{{ article.date|date('c') }}">{{ article.date|date('d-m-Y') }}</time>
     </footer>
 </body>
 </html>
