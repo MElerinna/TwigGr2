@@ -5,12 +5,18 @@
     <title>Twig</title>
 </head>
 <body>
-    <header>
-        <h1>{{ article.name }}</h1>
-    </header>
-    <p>{{ article.content }}</p>
-    <footer>
-        <time datetime="{{ article.date|date('c') }}">{{ article.date|date('d-m-Y') }}</time>
-    </footer>
+    {% for article in articles %}
+        {% if article.enabled %}
+            <article>
+            <header>
+                <h1>{{ article.name }}</h1>
+            </header>
+            <p>{{ article.content }}</p>
+            <footer>
+                <time datetime="{{ article.date|date('c') }}">{{ article.date|date('d-m-Y') }}</time>
+            </footer>
+            </article>
+        {% endif %}
+    {% endfor %}
 </body>
 </html>
